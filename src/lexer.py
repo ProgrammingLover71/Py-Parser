@@ -28,4 +28,9 @@ class Lexer:
            self.current = self.source[self._index]
         else:
             self.current = chr(0)
-            
+    
+    """Retrieve a token from the source code."""
+    def get_token(self) -> Token:
+        tok: Token = Token(TokenTypes.EOF, self.line, self.column, None)
+        # Check for a digit OR a period follwed by a digit
+        if  
