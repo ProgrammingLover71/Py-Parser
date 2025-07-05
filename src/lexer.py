@@ -33,4 +33,5 @@ class Lexer:
     def get_token(self) -> Token:
         tok: Token = Token(TokenTypes.EOF, self.line, self.column, None)
         # Check for a digit OR a period follwed by a digit
-        if  
+        if self.current.isdigit() or self.current == '.':
+            return self.lex_number()
